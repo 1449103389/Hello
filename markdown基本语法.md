@@ -19,5 +19,5 @@
 ***
   
 >>五、图片  
-感叹号[图片描述](图片地址("图片标题":可选))  
-![Bitmap]("./pic/y2.png")  
+感叹号[图片描述](图片地址 "图片标题":可选)  
+![Bitmap]("https://github.com/1449103389/Hello/master/pic/y2.png")  
