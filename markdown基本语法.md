@@ -19,5 +19,25 @@
 ***
   
 >>五、图片  
-感叹号[图片描述](图片地址 "图片标题":可选)  
-![Bitmap](https://github.com/1449103389/Hello/blob/master/pic/y2.png)  
+感叹号[图片描述](图片地址(不需要用“”括起来) "图片标题":可选)  
+![Bitmap](./pic/y2.png "位图")  
+  
+>>六、超链接  
+\[超链接名\](超链接地址 "超链接title":可选)  
+[百度](www.baidu.com "百度一下")  
+  
+>>七、列表  
+\-\+\*中的任何一种都可以，与内容间要有空格  
+- 1  
++ 2  
+* 3
+  
+>>八、代码片段  
+代码块用三个反引号包起来，如果想实现高亮，前三个反引号后加上语言种类  
+```Java  
+ public class HelloWorld{
+     public static void main(String[] args){
+         System.out.println("Hello World !");
+     }
+ }  
+ ```
