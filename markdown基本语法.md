@@ -20,4 +20,4 @@
   
 >>五、图片  
 感叹号[图片描述](图片地址 "图片标题":可选)  
-![Bitmap]("https://github.com/1449103389/Hello/blob/master/pic/y2.png")  
+![Bitmap](https://github.com/1449103389/Hello/blob/master/pic/y2.png)  
