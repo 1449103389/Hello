@@ -1,0 +1,7 @@
+    按照网上的教程安装完jdk后，一般还会让人配置环境变量，而这环境变量的配置，
+一般又包括path和classpath两个，path需要配置两个，一是X:/xx/jdk/bin，二是
+X:/xx/jdk/lib。增加前一个是为了使javac,javap,javadoc等命令在任何路径下都
+可用，后者的作用暂时不知。至于设置classpath，作用是告诉虚拟机，如果在执行java
+类文件的当前目录下无法找到该类文件，则默认到classpath设置的路径中依次搜索该
+类文件，一般把X:/xx/jdk/lib/dt.jar和X:/xx/jdk/lib/tools.jar加到classpath
+里，这两个目录下提供了一些类工具。
