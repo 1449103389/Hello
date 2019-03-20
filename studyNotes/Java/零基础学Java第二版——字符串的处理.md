@@ -76,3 +76,9 @@ output:
 2. 设定容量大小的构造器：StringBuffer sb = new StringBuffer(int x)
   
 ### 6.2.6 缓冲字符串处理的方法
+感觉凡是String类有的方法（concat我不确定），StringBuffer类应该都有，毕竟String类的方法在对象初始化后就不能  
+改变其内容了，而StringBuffer类不一样，此类的对象在初始化之后仍能改变，所以它有很多String类所没有的方法，比如  
+append()，setCharAt(),deleteCharAt(),insert(int offset, String s),reverse()等  
+此外还有一个StringBuilder类，它们间的部分区别如下：  
++ 运行速度：StringBuilder>StringBuffer>String
++ 线程安全：StringBuffer线程安全，StringBuilder线程不安全
