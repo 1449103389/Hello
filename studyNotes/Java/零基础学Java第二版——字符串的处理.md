@@ -86,5 +86,6 @@ append()，setCharAt(),deleteCharAt(),insert(int offset, String s),reverse()等
 ### 6.5.3 将int型转换成字符串String有两种方法
 + String s = String.valueOf(i)
 + String s = Integer.toString(i)  
+  
 开始我还异想天开地想到向控制台打印数字的时候不是隐式调用了toString()方法吗，这个方法返回值正好是String类型的，  
-所以，可不可以String s = i.toString()？结果，编译报错：无法取消引用int，果然还是不能空想，但为啥会报这个错呢
+所以，可不可以String s = i.toString()?结果，编译报错：无法取消引用int，果然还是不能空想，但为啥会报这个错呢
