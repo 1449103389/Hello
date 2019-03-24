@@ -14,6 +14,7 @@ public class Temp{
   
 + **Java中的变量重复定义的疑问**
 ```Java
+//1.
 public class Temp{
 	public static void main(String[] args){
 		int i = 0;
@@ -26,7 +27,8 @@ public class Temp{
 
 编译时报错：已在方法mian(String[] args)中定义了变量i
 		int i = j;
-
+		
+//2.
 public class Temp{
 	static int i = 1;
 	public static void main(String[] args){
@@ -40,6 +42,7 @@ public class Temp{
 编译时不报错，output:
 0
 
+//3.
 public class Temp{
 	static int i = 1;
 	public static void main(String[] args){
