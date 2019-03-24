@@ -11,3 +11,46 @@ public class Temp{
 编译时报错：需要数组，但找到String
           str[0] = 'x';
 ```       
+  
++ **Java中的变量重复定义的疑问**
+```Java
+public class Temp{
+	public static void main(String[] args){
+		int i = 0;
+		for(int j=0; j<1; j++){
+			int i = j;
+			System.out.println(i);
+		}
+	}
+}
+
+编译时报错：已在方法mian(String[] args)中定义了变量i
+		int i = j;
+
+public class Temp{
+	static int i = 1;
+	public static void main(String[] args){
+		for(int j=0; j<1; j++){
+			int i = j;
+			System.out.println(i);
+		}
+	}
+}
+
+编译时不报错，output:
+0
+
+public class Temp{
+	static int i = 1;
+	public static void main(String[] args){
+		for(int j=0; j<1; j++){
+			System.out.println(i);
+		}
+	}
+}
+
+编译时不报错，output:
+1
+
+为啥类变量在方法中就能重复定义，并且还会把类变量覆盖？
+```
