@@ -81,3 +81,45 @@ class TempSon extends Temp{
 		
 如果编写子类构造器时不显式调用父类构造器，那么默认由编译器隐式调用super()
 ```
+  
++ **4. Java中子类和父类间的转换**
+```Java
+public class Temp{
+	public void printInfo(){
+		System.out.println("parent info");
+	}
+	
+	public static void main(String[] args){
+        	Temp t1 = new TempSon();
+        	t1.printInfo();
+		//!t1.sonFunction();//编译报错，找不到符号
+		t1 = (TempSon)t1;
+		t1.printInfo();
+		//!t1.sonFunction();//编译报错，找不到符号
+		Temp t2 = new Temp();
+		t2.printInfo();
+		t2 = (TempSon)t2;//编译时不报错，但运行时会抛出异常(源码中这是第14行)
+    }
+    
+}
+
+class TempSon extends Temp{
+	public void printInfo(){
+		System.out.println("son info");
+	}
+	
+	public void sonFunction(){
+		System.out.println("only in son class");
+	}
+}
+
+output:
+son info
+son info
+parent info
+Exception in thread "main" java.lang.ClassCastException: Temp cannot be cast to TempSon
+        at Temp.main(Temp.java:14)
+	
+    上例说明，初始化为子类的父类引用，在调用父类和子类都有的方法时，会根据动态绑定，调用子类的方法，但是，这个引用不能调用
+只存在于子类中的方法，即使在用类型转换转为子类后也不行。而初始化为父类的引用，在用类型转换转为子类后，会在运行时抛出异常。
+```
