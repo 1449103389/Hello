@@ -129,14 +129,14 @@ Exception in thread "main" java.lang.ClassCastException: Temp cannot be cast to 
 ```Java
 public class Temp{
     public static void main(String[] args){
-        String str1 = "abc";
-		String str2 = str1;
-		str2 = "def";
-		StringBuffer sb1 = new StringBuffer("abc");
-		StringBuffer sb2 = sb1;
-		sb2.setCharAt(0,'x');
-		System.out.println("str1:" + str1 +" str2:" + str2);
-		System.out.println(" sb1:" + sb1 +"  sb2:" + sb2);
+	String str1 = "abc";
+	String str2 = str1;
+	str2 = "def";
+	StringBuffer sb1 = new StringBuffer("abc");
+	StringBuffer sb2 = sb1;
+	sb2.setCharAt(0,'x');
+	System.out.println("str1:" + str1 +" str2:" + str2);
+	System.out.println(" sb1:" + sb1 +"  sb2:" + sb2);
     }
 }
 
