@@ -124,3 +124,23 @@ Exception in thread "main" java.lang.ClassCastException: Temp cannot be cast to 
 不能调用只存在于子类中的方法（更准确地说是成员），即使在用类型转换转为子类后也不行。而初始化为父类的引用，在用类型
 转换转为子类后，会在运行时抛出异常。
 ```
+  
++ **5. String和StringBuffer**
+```Java
+public class Temp{
+    public static void main(String[] args){
+        String str1 = "abc";
+		String str2 = str1;
+		str2 = "def";
+		StringBuffer sb1 = new StringBuffer("abc");
+		StringBuffer sb2 = sb1;
+		sb2.setCharAt(0,'x');
+		System.out.println("str1:" + str1 +" str2:" + str2);
+		System.out.println(" sb1:" + sb1 +"  sb2:" + sb2);
+    }
+}
+
+output:
+str1:abc str2:def
+ sb1:xbc  sb2:xbc
+```
