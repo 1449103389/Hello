@@ -123,6 +123,25 @@ Exception in thread "main" java.lang.ClassCastException: Temp cannot be cast to 
     上例说明，初始化为子类的父类引用，在调用父类和子类都有的方法时，会根据动态绑定，调用子类的方法，但是，这个引用
 不能调用只存在于子类中的方法（更准确地说是成员），即使在用类型转换转为子类后也不行。而初始化为父类的引用，在用类型
 转换转为子类后，会在运行时抛出异常。
+    但是这样想来，向下转型的意义又在哪里呢，看看下面的例子
+public class Temp extends BaseTemp{
+    private int i = 3;
+    public static void main(String[] args){
+        BaseTemp bt = new Temp();
+	//!System.out.println(bt.i);//编译报错，找不到符号
+	Temp b = (Temp)bt;
+	System.out.println(b.i);
+    }
+}
+
+class BaseTemp{
+	
+}
+
+output:
+3
+看完上面的例子，或许能稍微感受到向下转型的意义，它其实在一个子类对象可能传参时不得不转成父类对象（比如object），而在方法  
+（比如equals()）中又需要转换成子类时会产生很大作用
 ```
   
 + **5. String和StringBuffer**
