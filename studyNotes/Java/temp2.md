@@ -65,3 +65,23 @@ public class Temp{
 output:
 check1:true check2:false
 ```
+
+3. **传参时使用++**
+```Java
+public class Temp{
+	public static void main(String[] args){
+		int i = 0;
+		int j = testP(i++);
+		System.out.println(j);
+	}
+	
+	static int testP(int x){
+		return x;
+	}
+}
+
+output:
+0
+
+//结果表明，传参时使用++，需要注意，如果++在后，也是先传值，再自增
+```
