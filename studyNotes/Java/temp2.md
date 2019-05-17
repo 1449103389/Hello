@@ -50,8 +50,8 @@ Temp
 
 
 /*
-另一种检测方式是instance运算符，instanceof使用两个操作数：左边为对象的引用，右边是类名，表达式返回一个布尔值，如果该对象是这种类
-或其子类的实例，为true，否则为false
+另一种检测方式是instance运算符，instanceof使用两个操作数：左边为对象的引用，右边是类名，表达式返回一个布尔值，
+如果该对象是这种类或其子类的实例，为true，否则为false
 */
 public class Temp{
 	public static void main(String[] args){
