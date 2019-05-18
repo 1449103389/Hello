@@ -85,3 +85,16 @@ output:
 
 //结果表明，传参时使用++，需要注意，如果++在后，也是先传值，再自增
 ```
+
+4. **所有数组中都有一个名为length的实例变量，它指出了数组中包含多少个元素**
+```Java
+public class Temp{
+	public static void main(String[] args){
+		String[] str = {"abc","123","qw"};
+		System.out.println(str.length);
+	}
+}
+
+output:
+3
+```
