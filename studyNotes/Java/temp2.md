@@ -98,3 +98,9 @@ public class Temp{
 output:
 3
 ```
+
+5. **Final类、方法和变量**
+> 限定符final用于类、方法和变量，指出它们将不会被修改。对于类、方法和变量，final的含义各不相同：  
++ final类不能被继承
++ final方法不能被子类覆盖
++ final变量的值不能被修改
