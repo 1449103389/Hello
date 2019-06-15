@@ -1,0 +1,35 @@
+**1.UDP发送的例子**
+```C++
+#include<WINSOCK2.H>
+#include<iostream>
+#pragma comment(lib,"WS2_32.lib")
+
+const char* SEND_TO_IP = "xxx.xxx.xxx.xxx";
+const int SEND_TO_PORT = 10001;
+using namespace std;
+int main()
+{
+    WSADATA wsaData;//初始化
+    SOCKET SendSocket;  
+    char SendBuf[1024] = "Hello, I am udp message from xxx.xxx.xxx.xxx";//发送数据的缓冲区
+    int BufLen = 1024;//缓冲区大小
+    //初始化Socket
+    WSAStartup(MAKEWORD(2,2),&wsaData);
+    //创建Socket对象
+    SendSocket = socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
+    sockaddr_in RecvAddr;//目的地址
+    //设置目的地址
+    RecvAddr.sin_family = AF_INET;
+    RecvAddr.sin_port = htons(SEND_TO_PORT);
+    RecvAddr.sin_addr.s_addr = inet_addr(SEND_TO_IP);
+    //向目的地址发送数据报
+    printf("Sending a datagram to the receiver...\n");
+    sendto(SendSocket,SendBuf,BufLen,0,(SOCKADDR *)&RecvAddr,sizeof(RecvAddr));
+    //发送完成，关闭Socket
+    printf("finished sending,close socket.\n");
+    closesocket(SendSocket);
+    printf("Exting.\n");
+    WSACleanup();
+    return 0;
+}
+```
